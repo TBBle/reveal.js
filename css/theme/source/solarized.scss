@@ -42,6 +42,23 @@ $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
 
+// Expose Solarized colour names as CSS Variables (Available in both themes)
+html * {
+	--sol-bg: #{$base3};
+	--sol-bg-hi: #{$base2};
+	--sol-text-lo: #{$base1};
+	--sol-text: #{$base00};
+	--sol-text-em: #{$base01};
+	--sol-yellow: #{$yellow};
+	--sol-orange: #{$orange};
+	--sol-red: #{$red};
+	--sol-magenta: #{$magenta};
+	--sol-violet: #{$violet};
+	--sol-blue: #{$blue};
+	--sol-cyan: #{$cyan};
+	--sol-green: #{$green};
+}
+
 // Override theme settings (see ../template/settings.scss)
 $mainColor: $base00;
 $headingColor: $base01;

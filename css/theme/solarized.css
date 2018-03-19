@@ -11,6 +11,21 @@ html * {
   color-profile: sRGB;
   rendering-intent: auto; }
 
+html * {
+  --sol-bg: #fdf6e3;
+  --sol-bg-hi: #eee8d5;
+  --sol-text-lo: #93a1a1;
+  --sol-text: #657b83;
+  --sol-text-em: #586e75;
+  --sol-yellow: #b58900;
+  --sol-orange: #cb4b16;
+  --sol-red: #dc322f;
+  --sol-magenta: #d33682;
+  --sol-violet: #6c71c4;
+  --sol-blue: #268bd2;
+  --sol-cyan: #2aa198;
+  --sol-green: #859900; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
