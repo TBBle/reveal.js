@@ -149,12 +149,22 @@ module.exports = function(grunt) {
 		retire: {
 			js: [ 'js/reveal.js', 'lib/js/*.js', 'plugin/**/*.js' ],
 			node: [ '.' ]
+		},
+
+		copy: {
+			reveal_external: {
+				expand: true,
+				cwd: 'node_modules/reveal_external/',
+				src: [ 'external/**' ],
+				dest: 'plugin/'
+			}
 		}
 
 	});
 
 	// Dependencies
 	grunt.loadNpmTasks( 'grunt-contrib-connect' );
+	grunt.loadNpmTasks( 'grunt-contrib-copy' );
 	grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-qunit' );
@@ -166,7 +176,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks( 'grunt-zip' );
 	
 	// Default task
-	grunt.registerTask( 'default', [ 'css', 'js' ] );
+	grunt.registerTask( 'default', [ 'css', 'copy_plugins', 'js' ] );
 
 	// JS task
 	grunt.registerTask( 'js', [ 'jshint', 'uglify', 'qunit' ] );
@@ -179,6 +189,9 @@ module.exports = function(grunt) {
 
 	// All CSS
 	grunt.registerTask( 'css', [ 'sass', 'autoprefixer', 'cssmin' ] );
+
+	// Copy plugins from node_modules
+	grunt.registerTask( 'copy_plugins', [ 'copy:reveal_external' ] );
 
 	// Package presentation to archive
 	grunt.registerTask( 'package', [ 'default', 'zip' ] );
